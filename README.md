@@ -1,8 +1,8 @@
 # Sample repo for Null Provider with Count
-See https://registry.terraform.io/providers/hashicorp/null/latest/docs and https://developer.hashicorp.com/terraform/language/meta-arguments/count for the reference
+See more information about [Null provider](https://registry.terraform.io/providers/hashicorp/null/latest/docs) and [the count Meta-Argument](https://developer.hashicorp.com/terraform/language/meta-arguments/count).
 
 # Prerequisite
-Install and configure Terraform as per https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+Install and configure Terraform as per [official documentation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
 # How To
 
@@ -23,7 +23,7 @@ cd null-count
 ```
 terraform init
 ```
-Ensure to have the following output:
+You should see the following output:
 
 ```
 Initializing the backend...
@@ -47,38 +47,6 @@ should now work.
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
-```
-
-## Test Plan 
-
-```
-terraform plan
-```
-You should see the similar output:
-
-```
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
-symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # null_resource.test[0] will be created
-  + resource "null_resource" "test" {
-      + id = (known after apply)
-    }
-
-  # null_resource.test[1] will be created
-  + resource "null_resource" "test" {
-      + id = (known after apply)
-    }
-
-Plan: 2 to add, 0 to change, 0 to destroy.
-
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run
-"terraform apply" now.
 ```
 
 ## Run Terraform Apply
@@ -126,6 +94,7 @@ null_resource.test[1]: Creation complete after 0s [id=3221446251084986144]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
+
 ## Clean Up
 
 ```
