@@ -81,16 +81,16 @@ Do you want to perform these actions?
 
   Enter a value: yes
 
-null_resource.test[0]: Creating...
 null_resource.test[1]: Creating...
-null_resource.test[1]: Provisioning with 'local-exec'...
+null_resource.test[0]: Creating...
 null_resource.test[0]: Provisioning with 'local-exec'...
-null_resource.test[0] (local-exec): Executing: ["/bin/sh" "-c" "echo 'Test 0'"]
+null_resource.test[1]: Provisioning with 'local-exec'...
 null_resource.test[1] (local-exec): Executing: ["/bin/sh" "-c" "echo 'Test 1'"]
-null_resource.test[0] (local-exec): Test 0
-null_resource.test[0]: Creation complete after 0s [id=1625888527827914871]
+null_resource.test[0] (local-exec): Executing: ["/bin/sh" "-c" "echo 'Test 0'"]
 null_resource.test[1] (local-exec): Test 1
-null_resource.test[1]: Creation complete after 0s [id=3221446251084986144]
+null_resource.test[1]: Creation complete after 0s [id=7625613104316200228]
+null_resource.test[0] (local-exec): Test 0
+null_resource.test[0]: Creation complete after 0s [id=8144001649468814708]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
@@ -103,8 +103,8 @@ terraform destroy
 Enter **yes** and hit **Enter** to destroy the resources:
 
 ```
-null_resource.test[0]: Refreshing state... [id=1625888527827914871]
-null_resource.test[1]: Refreshing state... [id=3221446251084986144]
+null_resource.test[0]: Refreshing state... [id=8144001649468814708]
+null_resource.test[1]: Refreshing state... [id=7625613104316200228]
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
 symbols:
@@ -114,12 +114,12 @@ Terraform will perform the following actions:
 
   # null_resource.test[0] will be destroyed
   - resource "null_resource" "test" {
-      - id = "1625888527827914871" -> null
+      - id = "8144001649468814708" -> null
     }
 
   # null_resource.test[1] will be destroyed
   - resource "null_resource" "test" {
-      - id = "3221446251084986144" -> null
+      - id = "7625613104316200228" -> null
     }
 
 Plan: 0 to add, 0 to change, 2 to destroy.
@@ -130,12 +130,10 @@ Do you really want to destroy all resources?
 
   Enter a value: yes
 
-null_resource.test[1]: Destroying... [id=3221446251084986144]
-null_resource.test[0]: Destroying... [id=1625888527827914871]
-null_resource.test[1]: Destruction complete after 0s
+null_resource.test[1]: Destroying... [id=7625613104316200228]
+null_resource.test[0]: Destroying... [id=8144001649468814708]
 null_resource.test[0]: Destruction complete after 0s
+null_resource.test[1]: Destruction complete after 0s
 
 Destroy complete! Resources: 2 destroyed.
 ```
-
-
